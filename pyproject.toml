@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zaolo-video-ops-assistant"
-version = "2.10.0"
+version = "2.11.0"
 description = "ZAOLO 造流 · 视频号运营助手 — 数字员工蜂群 / RSI 自进化 / GEO / 爆款评分 / 合规闸门 / 生产管线（FastAPI + 高保真原型）"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,6 +20,8 @@ dependencies = [
     "fastapi>=0.110",
     "uvicorn>=0.27",
     "python-multipart>=0.0.9",
+    "PyJWT>=2.8",
+    "bcrypt>=4.1",
 ]
 
 [project.scripts]

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zaolo-video-ops-assistant"
+version = "2.22.0"
+description = "ZAOLO 造流 · 视频号运营助手 — 数字员工蜂群 / RSI 自进化 / GEO / 爆款评分 / 合规闸门 / 生产管线（FastAPI + 高保真原型）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "ZAOLO 造流团队" }]
+keywords = ["视频号", "wechat-channels", "ops", "agent", "fastapi", "swarm", "rsi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "python-multipart>=0.0.9",
+    "PyJWT>=2.8.0",
+    "bcrypt>=4.1.2",
+]
+
+[project.scripts]
+zaolo-serve = "webapp.app:main"
+
+[project.urls]
+Homepage = "https://github.com/ZAOLO-AI/zaolo-video-ops-assistant"
+Documentation = "https://github.com/ZAOLO-AI/zaolo-video-ops-assistant#readme"
+"Issues" = "https://github.com/ZAOLO-AI/zaolo-video-ops-assistant/issues"
+
+[tool.setuptools]
+packages = ["core", "core.multimodal", "core.contracts", "webapp", "zaolo_data"]
+include-package-data = true

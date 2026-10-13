@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ZAOLO · 辅助图形-涟漪同心弧
+  用途：加载态、空状态水印、启动页背景
+  规范：透明度 ≤ 10%，135° 方向
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="rg-rip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A14E8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FF6A1A" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <!-- 中心：波形+箭头图形 -->
+  <g transform="translate(200,200)">
+    <path d="M0 -20 C 20 -20, 22 -46, 44 -46 C 66 -46, 70 -20, 78 -20"
+          stroke="#4A14E8" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M52 -34 L70 -20 L52 -6"
+          stroke="#4A14E8" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+  </g>
+  <!-- 涟漪三层同心弧 -->
+  <circle cx="200" cy="200" r="90"  stroke="url(#rg-rip)" stroke-width="2.5" fill="none"/>
+  <circle cx="200" cy="200" r="140" stroke="url(#rg-rip)" stroke-width="2" fill="none"/>
+  <circle cx="200" cy="200" r="185" stroke="url(#rg-rip)" stroke-width="1.5" fill="none"/>
+  <!-- 涟漪数据点 -->
+  <g fill="#4A14E8" opacity="0.35">
+    <circle cx="200" cy="110" r="2.5"/>
+    <circle cx="290" cy="200" r="2.5"/>
+    <circle cx="200" cy="290" r="2.5"/>
+    <circle cx="110" cy="200" r="2.5"/>
+  </g>
+</svg>

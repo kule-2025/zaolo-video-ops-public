@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ZAOLO · 辅助图形-流（波形箭头序列）
+  用途：分隔线、章节页头、装饰
+  灵感：logo 内核的"流"抽象成可平铺的波形序列
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="600" height="100">
+  <defs>
+    <linearGradient id="zg-flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4A14E8"/>
+      <stop offset="50%" stop-color="#7A3CFF"/>
+      <stop offset="100%" stop-color="#FF6A1A"/>
+    </linearGradient>
+  </defs>
+  <!-- 4 段波形 -->
+  <g stroke="url(#zg-flow)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8">
+    <path d="M20 50 C 60 50, 62 30, 90 30 C 118 30, 120 50, 140 50"/>
+    <path d="M180 50 C 220 50, 222 30, 250 30 C 278 30, 280 50, 300 50"/>
+    <path d="M340 50 C 380 50, 382 30, 410 30 C 438 30, 440 50, 460 50"/>
+    <path d="M500 50 C 540 50, 542 30, 570 30"/>
+  </g>
+  <!-- 终端箭头 -->
+  <g stroke="#FF6A1A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M558 38 L570 30 L562 42"/>
+  </g>
+  <!-- 端点 -->
+  <circle cx="20" cy="50" r="4" fill="#4A14E8"/>
+  <circle cx="570" cy="30" r="5" fill="#FF6A1A"/>
+</svg>

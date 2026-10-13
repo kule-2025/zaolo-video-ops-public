@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ZAOLO 造流 · 图标源文件（纯图形标）
+  正方形 1024×1024，圆角 20%（204px），渐变 135°
+  用途：应用图标、Favicon、社媒头像
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="zg-ico" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A14E8"/>
+      <stop offset="50%" stop-color="#7A3CFF"/>
+      <stop offset="100%" stop-color="#FF6A1A"/>
+    </linearGradient>
+    <clipPath id="rounded-clip">
+      <rect x="0" y="0" width="1024" height="1024" rx="205" ry="205"/>
+    </clipPath>
+  </defs>
+
+  <!-- 圆角渐变底 -->
+  <g clip-path="url(#rounded-clip)">
+    <rect x="0" y="0" width="1024" height="1024" fill="url(#zg-ico)"/>
+    <!-- 装饰高光 -->
+    <circle cx="200" cy="200" r="380" fill="#ffffff" opacity="0.10"/>
+    <circle cx="820" cy="820" r="320" fill="#ffffff" opacity="0.08"/>
+  </g>
+
+  <!-- 六边形主标识（居中，占画布约 55%）-->
+  <g transform="translate(512,512) scale(3.05) translate(-50,-50)">
+    <path d="M50 6 L88 28 L88 72 L50 94 L12 72 L12 28 Z" fill="#FFFFFF"/>
+    <path d="M26 56 C 40 56, 42 40, 56 40 C 70 40, 74 60, 78 60"
+          stroke="#4A14E8" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+    <path d="M66 50 L80 60 L66 70"
+          stroke="#4A14E8" stroke-width="6.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

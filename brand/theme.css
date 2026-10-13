@@ -1,0 +1,235 @@
+/* =====================================================================
+   ZAOLO 造流 · 品牌令牌 CSS v1.0
+   ---------------------------------------------------------------------
+   来源：ZAOLO-VI-品牌视觉识别-2026-10-12.html（VI 手册）
+   用途：为视频号运营助手 prototype/index.html 提供统一品牌视觉令牌
+   更新：2026-10-12 · v1.0
+   ===================================================================== */
+
+:root {
+  /* ---- 品牌色（5 主色 + 4 中性色）---- */
+  --brand:      #4A14E8;   /* 深紫 · 品牌主色 */
+  --brand-2:    #7A3CFF;   /* 亮紫 · 渐变中段 / hover */
+  --accent:     #FF6A1A;   /* 橙 · 点缀 / 强调 / CTA */
+  --mint:       #06C78A;   /* 薄荷 · 成功 / 通过 */
+  --coral:      #E63946;   /* 珊瑚 · 危险 / 拦截 */
+  --amber:      #FFB703;   /* 琥珀 · 警告 / 待处理 */
+  --ink:        #0F0F23;   /* 深墨 · 主文字 */
+  --ink-2:      #3B3B56;   /* 灰墨 · 次文字 */
+  --ink-3:      #70708C;   /* 灰 · 提示文字 */
+  --line:       #E8E8F2;   /* 分隔线 */
+  --bg:         #F5F6FA;   /* 页面底 */
+  --paper:      #FFFFFF;   /* 面板底 */
+  --purple-50:  #F4F1FF;   /* 浅紫底 */
+  --purple-100: #E6DEFF;   /* 紫描边 */
+
+  /* ---- 品牌渐变（135° 左上→右下，方向恒定）---- */
+  --grad-brand:   linear-gradient(135deg, #4A14E8 0%, #7A3CFF 50%, #FF6A1A 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(74,20,232,0.08) 0%, rgba(255,106,26,0.06) 100%);
+  --grad-hero:    linear-gradient(135deg, #4A14E8 0%, #7A3CFF 40%, #FF6A1A 100%);
+  --grad-poster:  linear-gradient(160deg, #0F0F23 0%, #26154D 60%, #4A14E8 100%);
+  --grad-glow:    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18) 0, transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.14) 0, transparent 50%);
+
+  /* ---- 语义色（业务状态）---- */
+  --status-done:   var(--mint);
+  --status-run:    var(--brand);
+  --status-warn:   var(--amber);
+  --status-fail:   var(--coral);
+  --status-wait:   var(--ink-3);
+  --status-review: var(--brand-2);
+
+  /* ---- 语义色（等级）---- */
+  --grade-S:  #FF6A1A;
+  --grade-A:  #4A14E8;
+  --grade-B:  #FFB703;
+  --grade-C:  #E63946;
+
+  /* ---- 字号阶梯（8 档）---- */
+  --fs-hero:   88px;   /* VI 封面 hero */
+  --fs-h1:     32px;   /* 页面标题 */
+  --fs-h2:     24px;   /* 分区标题 */
+  --fs-h3:     18px;   /* 卡片标题 */
+  --fs-body:   14px;   /* 正文 */
+  --fs-mono:   13px;   /* 数字 / KPI */
+  --fs-caption:12px;   /* 标签 */
+  --fs-micro:  11px;   /* 极小标注 */
+  --fs-min:    10px;   /* 底线 */
+
+  /* ---- 字重（三档）---- */
+  --fw-regular: 400;
+  --fw-medium:  600;
+  --fw-bold:    800;
+
+  /* ---- 行高 ---- */
+  --lh-tight:  1.2;
+  --lh-compact:1.4;
+  --lh-body:   1.7;
+  --lh-loose:  1.9;
+
+  /* ---- 间距（4px 栅格）---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 32px;
+  --sp-8: 44px;
+  --sp-9: 56px;
+
+  /* ---- 圆角（四档 + pill）---- */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 14px;
+  --r-2xl: 18px;
+  --r-3xl: 20px;
+  --r-pill: 999px;
+
+  /* ---- 阴影（三档）---- */
+  --shadow-1: 0 2px 8px rgba(15,15,35,0.05);
+  --shadow-2: 0 6px 24px rgba(15,15,35,0.08);
+  --shadow-3: 0 12px 40px rgba(15,15,35,0.12);
+  --shadow-brand: 0 8px 24px rgba(74,20,232,0.18);
+
+  /* ---- 版面系统 ---- */
+  --topbar-h:     56px;   /* 顶栏 */
+  --sidebar-w:    240px;  /* 主侧栏 */
+  --sidebar-min:  210px;  /* 迷你侧栏 */
+  --rail-w:       230px;  /* 应用原型侧栏 */
+  --content-max:  1180px; /* 主内容最大宽 */
+  --content-2:    1200px; /* 宽内容最大宽 */
+
+  /* ---- 动效 ---- */
+  --t-fast:   120ms;
+  --t-normal: 200ms;
+  --t-slow:   300ms;
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =====================================================================
+   常用组件基础（与 prototype/index.html 保持同步）
+   ===================================================================== */
+
+/* 按钮 */
+.zaolo-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: var(--r-md);
+  font-size: 13px; font-weight: var(--fw-medium);
+  cursor: pointer; border: none; font-family: inherit;
+  transition: all var(--t-normal) var(--ease);
+}
+.zaolo-btn-primary {
+  background: var(--grad-brand);
+  color: #fff;
+  box-shadow: var(--shadow-brand);
+}
+.zaolo-btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.zaolo-btn-accent {
+  background: var(--accent); color: #fff;
+}
+.zaolo-btn-ghost {
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--line);
+}
+.zaolo-btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+.zaolo-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* 胶囊标签 */
+.zaolo-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: var(--r-pill);
+  font-size: var(--fs-caption); font-weight: var(--fw-medium);
+  background: var(--bg); color: var(--ink-2);
+  border: 1px solid var(--line);
+}
+.zaolo-pill-brand   { background: var(--purple-50); color: var(--brand);    border-color: var(--purple-100); }
+.zaolo-pill-accent  { background: #FFEFE0;         color: #B84A00;         border-color: #FFD3B0; }
+.zaolo-pill-mint    { background: #E3FAF0;         color: #049B6B;         border-color: #B9EBD5; }
+.zaolo-pill-coral   { background: #FDE9EC;         color: #B8202F;         border-color: #F7C8CE; }
+.zaolo-pill-ink     { background: var(--ink);      color: #fff;            border-color: var(--ink); }
+.zaolo-pill-amber   { background: #FFF4D6;         color: #8B6200;         border-color: #FFE0A3; }
+
+/* KPI 卡 */
+.zaolo-kpi {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 16px;
+}
+.zaolo-kpi-label { font-size: var(--fs-caption); color: var(--ink-3); letter-spacing: 0.05em; }
+.zaolo-kpi-value { font-size: 26px; font-weight: var(--fw-bold); color: var(--ink);
+                   font-family: ui-monospace, "Inter", monospace;
+                   letter-spacing: -0.5px; margin: 4px 0; }
+.zaolo-kpi-note  { font-size: var(--fs-micro); color: var(--mint); font-weight: var(--fw-medium); }
+.zaolo-kpi-note.warn { color: var(--amber); }
+.zaolo-kpi-note.coral{ color: var(--coral); }
+
+/* 面板 */
+.zaolo-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.zaolo-panel-h {
+  font-size: 13px; font-weight: var(--fw-bold);
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.zaolo-panel-h .more { font-size: var(--fs-micro); color: var(--ink-3); font-weight: 500; }
+
+/* 流程节点 */
+.zaolo-pnode {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 66px; flex-shrink: 0;
+}
+.zaolo-pnode-c {
+  width: 44px; height: 44px; border-radius: var(--r-lg);
+  background: #fff; border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: var(--fw-bold); color: var(--ink-3);
+  position: relative;
+}
+.zaolo-pnode.done .zaolo-pnode-c { background: var(--mint); border-color: var(--mint); color: #fff; }
+.zaolo-pnode.run  .zaolo-pnode-c { background: var(--brand); border-color: var(--brand); color: #fff;
+                                    animation: zaolo-pulse 1.5s infinite; }
+.zaolo-pnode.warn .zaolo-pnode-c { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+.zaolo-pnode.fail .zaolo-pnode-c { background: var(--coral); border-color: var(--coral); color: #fff; }
+.zaolo-pnode-name  { font-size: 10.5px; font-weight: var(--fw-medium); margin-top: 6px; color: var(--ink-2); }
+.zaolo-pnode-owner { font-size: 9.5px; color: var(--ink-3); }
+
+@keyframes zaolo-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(74,20,232,0.35); }
+  50%     { box-shadow: 0 0 0 8px rgba(74,20,232,0); }
+}
+
+/* 数据流向标记（前后端拉通专用） */
+[data-bind] { position: relative; }
+[data-bind]:hover::after {
+  content: attr(data-bind);
+  position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: #fff;
+  padding: 3px 8px; border-radius: var(--r-sm);
+  font-size: 10px; font-family: ui-monospace, monospace;
+  white-space: nowrap; z-index: 100;
+  box-shadow: var(--shadow-2);
+  pointer-events: none;
+}
+.zaolo-bind-marker {
+  position: absolute; top: 3px; right: 3px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255,106,26,0.25);
+  pointer-events: none;
+}
+
+/* 品牌 mark 内联 SVG 尺寸辅助 */
+.zaolo-mark      { width: 36px; height: 36px; flex-shrink: 0; }
+.zaolo-mark-lg   { width: 100px; height: 100px; flex-shrink: 0; }
+.zaolo-mark-hero { width: 120px; height: 120px; flex-shrink: 0; }
+.zaolo-mark-sm   { width: 24px; height: 24px; flex-shrink: 0; }

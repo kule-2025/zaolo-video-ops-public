@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ZAOLO 造流 · 主标识（扁平纵向主标）
+  版本 v1.0 · 2026-10-12
+  内核：六边形（造物之台）+ 波形箭头（流）
+  规范：图形高度=100 单位，纵向锁定，图形与字标视觉重量平衡
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320">
+  <defs>
+    <linearGradient id="zg-v" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4A14E8"/>
+      <stop offset="50%" stop-color="#7A3CFF"/>
+      <stop offset="100%" stop-color="#FF6A1A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 图形：六边形 + 波形箭头（居中，占上部 60%）-->
+  <g transform="translate(50,10)">
+    <path d="M50 6 L88 28 L88 72 L50 94 L12 72 L12 28 Z" fill="url(#zg-v)"/>
+    <path d="M26 56 C 40 56, 42 40, 56 40 C 70 40, 74 60, 78 60"
+          stroke="#fff" stroke-width="6.5" fill="none" stroke-linecap="round"/>
+    <path d="M66 50 L80 60 L66 70"
+          stroke="#fff" stroke-width="6.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 中文字标 -->
+  <text x="100" y="200" text-anchor="middle"
+        font-family="'PingFang SC','Microsoft YaHei',sans-serif"
+        font-size="44" font-weight="800" fill="#0F0F23"
+        letter-spacing="12">造流</text>
+
+  <!-- 英文字标 -->
+  <text x="100" y="238" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',sans-serif"
+        font-size="20" font-weight="700" fill="#4A14E8"
+        letter-spacing="6">ZAOLO</text>
+
+  <!-- Slogan -->
+  <text x="100" y="270" text-anchor="middle"
+        font-family="'Inter',sans-serif"
+        font-size="9" fill="#70708C"
+        letter-spacing="2">CREATE THE FLOW · SWARM WITH INTELLIGENCE</text>
+
+  <!-- 底部品牌线 -->
+  <rect x="60" y="290" width="80" height="2" rx="1" fill="url(#zg-v)"/>
+</svg>
